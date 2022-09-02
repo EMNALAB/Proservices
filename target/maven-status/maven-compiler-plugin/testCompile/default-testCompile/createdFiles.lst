@@ -1,0 +1,16 @@
+pageObject\ReviewPageObj.class
+stepDefinition\SingnInStepDef.class
+pageObject\RegisterPageObj.class
+enums\EnvironmentType.class
+managers\FileReaderManager.class
+pageObject\ResearchPageObj.class
+pageObject\DevisPageObj.class
+stepDefinition\DevisStepDef.class
+stepDefinition\UploadStep.class
+pageObject\UploadPage.class
+testRunner\TestRunner.class
+enums\DriverType.class
+pageObject\SignInPageObj.class
+stepDefinition\ReviewStepDef.class
+stepDefinition\RegisterStepDef.class
+stepDefinition\ResearchStepDef.class
