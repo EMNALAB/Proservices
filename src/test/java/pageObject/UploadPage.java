@@ -34,7 +34,7 @@ public class UploadPage {
 		
 	}
 	
-	public void accesProfile() throws  AWTException {
+	public void accesProfile() throws  AWTException, InterruptedException {
 		
 		settingButton.click();
 		avatarButton.click();
@@ -63,8 +63,11 @@ public class UploadPage {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		//relacher la touche entrer
 		robot.keyRelease(KeyEvent.VK_ENTER);
-		robot.delay(9000);
 		submitButton.click();
+		js.executeScript("scroll(0,500)");
+		//robot.delay(15000);
+		Thread.sleep(5);
+		
 	}
 
 }

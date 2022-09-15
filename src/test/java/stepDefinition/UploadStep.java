@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -58,5 +59,9 @@ public class UploadStep {
 	   
 	}
 
-
+	@After
+	public void quit() throws InterruptedException {
+		Thread.sleep(6);
+		driver.quit();
+	}
 }

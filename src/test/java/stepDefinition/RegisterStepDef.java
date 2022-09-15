@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -76,8 +77,31 @@ public class RegisterStepDef {
 
 	@Then("^error msg is displayed$")
 	public void error_msg_is_displayed() throws Throwable {
-	    
+		registerPageObj.checkid();
+	}
+	@When("^enter new login$")
+	public void enter_new_login() throws Throwable {
+		registerPageObj.newlogin();
 	}
 
+	@When("^enter new pwd$")
+	public void enter_new_pwd() throws Throwable {
+		registerPageObj.newpwd();
+	}
 
+	@When("^confirm new password$")
+	public void confirm_new_password() throws Throwable {
+		registerPageObj.newcpwd();
+	}
+	@When("^enter existing email$")
+	public void enter_existing_email() throws Throwable {
+		registerPageObj.existingemail();
+		registerPageObj.validate();
+		registerPageObj.checkemail();
+	}
+	
+	@After
+	public void quit() {
+		driver.quit();
+	}
 }

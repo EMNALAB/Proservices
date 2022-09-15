@@ -13,9 +13,9 @@ import cucumber.api.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="features",glue={"stepDefinition"},
-tags="@Valid_signIn",
+tags=" @SignIn,@Research,@UploadPicture,@Review_quiz,@Valid_Register,@Invalid_Register_with_username",
 		plugin = { "pretty", "html:target/cucumber-html-report", "json:target/cucumber.json",
-				"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/Orange.html" }, 
+				"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" },
 		
 		snippets = SnippetType.CAMELCASE, 
 		monochrome = true)

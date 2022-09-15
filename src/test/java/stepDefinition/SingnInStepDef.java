@@ -1,10 +1,10 @@
 package stepDefinition;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -72,5 +72,9 @@ public class SingnInStepDef {
 	public void error_msg_should_be_displayed() throws Throwable {
 		signInPageObj.errorMsg();
 	}
-
+    
+	@After
+	public void quit() {
+		driver.quit();
+	}
 }

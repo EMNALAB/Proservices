@@ -89,7 +89,7 @@ public class ReviewPageObj {
 	public void authentification() {
 		loginButton.click();
 		username.sendKeys("EMNALABIDI");
-		password.sendKeys("HBXX4854");
+		password.sendKeys("emna123");
 		cnxButton.click();
 	}
 	//Actions actions = new Actions(driver);
@@ -209,7 +209,8 @@ public class ReviewPageObj {
 		String expectedResult = "Q16"; 
 		Assert.assertEquals(expectedResult,actualResult);
 	}
-	public void clickSummary() {
+	public void clickSummary() throws InterruptedException {
 		summarryButton.click();
+		Thread.sleep(3);
 	}
 	}

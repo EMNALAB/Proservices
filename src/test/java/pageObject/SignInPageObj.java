@@ -40,7 +40,7 @@ public class SignInPageObj {
 	}
 	
 	public void enterPwd() {
-		password.sendKeys("HBXX4854");
+		password.sendKeys("emna123");
 	}
 	
 	public void validate() {

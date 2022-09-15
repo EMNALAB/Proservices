@@ -35,6 +35,8 @@ public class RegisterPageObj {
 	@FindBy(css = "#login-popup-3 > div > div > a.logout")
 	WebElement home;
 	
+
+	
 	public  RegisterPageObj(WebDriver driver) {
 		this.driver= driver;
 		PageFactory.initElements(driver, this);
@@ -48,10 +50,10 @@ public class RegisterPageObj {
 	}
 	
 	public void enterUsername() {
-		username.sendKeys("Amir");
+		username.sendKeys("stephanie");
 	}
 	public void enterEmail() {
-		email.sendKeys("abcdf258963@gmail.com");
+		email.sendKeys("automation1239@gmail.com");
 	}
 	public void enterPassword() {
 		password.sendKeys("1234Achbsx");
@@ -69,15 +71,46 @@ public class RegisterPageObj {
 		Assert.assertEquals(expectedResult,actualResult);
 	}
 	
-	public void enteruser() {
+	public void enteruser() throws InterruptedException {
 		username.sendKeys("EMNALABIDI");
-		email.sendKeys("labidiemna230@gmail.com");
+		email.sendKeys("labidiemna23000@gmail.com");
 		password.sendKeys("1234Achbsx");
 		confirmpassword.sendKeys("1234Achbsx");
+		createAccountButton.click();
+		Thread.sleep(5);
+		
 	}
-	public void check() {
+	public void checkid() {
 		String actualResult =msg.getText();
 		String expectedResult = "Erreur : cet identifiant est déjà utilisé. Veuillez en choisir un autre.";
+		Assert.assertEquals(expectedResult,actualResult);
+	}
+	
+	public void newlogin()  {
+		username.sendKeys("EMNALABIDIkkb");
+		
+	}
+	
+	public void existingemail() throws InterruptedException {
+		
+		email.sendKeys("labidiemna230@gmail.com");	
+	}
+	public void newpwd()  {
+		password.sendKeys("1234Achbsx");
+		
+	}
+	public void newcpwd()  {
+		
+		confirmpassword.sendKeys("1234Achbsx");
+	}
+	public void validate() throws InterruptedException  {
+		createAccountButton.click();
+		Thread.sleep(6);
+	}
+	
+	public void checkemail() {
+		String actualResult =msg.getText();
+		String expectedResult = "Erreur : cette adresse e-mail est déjà utilisée. Veuillez en choisir une autre.";
 		Assert.assertEquals(expectedResult,actualResult);
 	}
 }
