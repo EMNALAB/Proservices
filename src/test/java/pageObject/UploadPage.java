@@ -45,7 +45,8 @@ public class UploadPage {
 		//Runtime.getRuntime().exec("C:\\Users\\beaut\\Desktop\\proservices\\Upload_Picture.exe");
 		//submitButton.click();
 		Robot robot = new Robot();
-		String text = "C:\\Users\\beaut\\Desktop\\proservices\\profil.png";
+		//String text = "C:\\Users\\beaut\\Desktop\\proservices\\profil.png";
+		String text = "Proservices\\photo\\profil.PNG";
 		//selectionner l'emplacement de la photo
 		StringSelection selection = new StringSelection(text);
 		
