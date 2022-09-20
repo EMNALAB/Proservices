@@ -14,6 +14,7 @@ import cucumber.api.SnippetType;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="features",glue={"stepDefinition"},
 tags=" @SignIn,@Research,@UploadPicture,@Review_quiz,@Valid_Register,@Invalid_Register_with_username",
+		//tags="@quiz_istqb",
 		plugin = { "pretty", "html:target/cucumber-html-report", "json:target/cucumber.json",
 				"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" },
 		
