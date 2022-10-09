@@ -21,8 +21,9 @@ public class SingnInStepDef {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://proservices-training-company.com/");
+		driver.get("https://proservices-training-company.com/dev-proservices/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	
 	}
 	
 	@When("click on Login button")

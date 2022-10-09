@@ -23,7 +23,7 @@ public class UploadStep {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://proservices-training-company.com/profile/");
+		driver.get("https://proservices-training-company.com/dev-proservices/profile/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	}

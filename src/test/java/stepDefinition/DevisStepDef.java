@@ -24,7 +24,7 @@ public class DevisStepDef {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://proservices-training-company.com/demander-un-devis/");
+		driver.get("https://proservices-training-company.com/dev-proservices/demander-un-devis/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    
 	}

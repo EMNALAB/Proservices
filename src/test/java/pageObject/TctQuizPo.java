@@ -33,12 +33,23 @@ public class TctQuizPo {
 	WebElement secondVerif;
 	@FindBy(xpath  = "//*[@id=\"content-item-quiz\"]/div[2]/form/button")
 	WebElement reviewButton;
-	@FindBy(className = "input[value='1612286792991260198b48f200e']")
+	@FindBy(css = ".button-retake-quiz")
 	WebElement retake;
 	
 	
-	@FindBy(css  = "input[value='1612286792991260198b48f200e']")
-	WebElement question1;
+	
+	@FindBy(xpath  = "//li[1]/label[1]/input[1]")
+	WebElement locator1;
+	@FindBy(xpath  = "//li[2]/label[1]/input[1]")
+	WebElement locator2;
+	@FindBy(xpath  = "//li[3]/label[1]/input[1]")
+	WebElement locator3;
+	@FindBy(xpath  = "//li[4]/label[1]/input[1]")
+	WebElement locator4;
+	@FindBy(xpath  = "//li[5]/label[1]/input[1]")
+	WebElement locator5;
+	//@FindBy(xpath  = "//input[@value='1612286792991260198b48f200e']")
+	//WebElement question1;
 	@FindBy(xpath  = "//button[normalize-space()='Next']")
 	WebElement nextButton;
 	@FindBy(xpath  = "//input[@value='1612287147884760198cabd8003']")
@@ -111,80 +122,44 @@ public class TctQuizPo {
 		retake.click();
 	}
 	
-	public void PasserQuiz1() {
-		question1.click();
-		nextButton.click();
-		question2.click();
-		nextButton.click();
-		question3.click();
-		nextButton.click();
-		question4.click();
-		nextButton.click();
-		question5.click();
-		nextButton.click();
-		question6.click();
-		nextButton.click();
-		question7.click();
-		nextButton.click();
-		question8.click();
-		nextButton.click();
-		question9.click();
-		nextButton.click();
-		question10.click();
-		nextButton.click();
-		question11.click();
-		nextButton.click();
-		question12.click();
-		nextButton.click();
-		question13.click();
-		nextButton.click();
-		question14.click();
-		nextButton.click();
-		question15.click();
-		nextButton.click();
-		question16.click();
-		TerminerButton.click();
-		ConfirmerTerminer.click();
-	}
+
 	public void checkResult1() {
 		String actualResult =check1.getText();
 		String expectedResult = "Your quiz grade failed. The result is 31.3% (the requirement is 65%)."; 
 		Assert.assertEquals(expectedResult,actualResult);
 		
 	}
-	public void PasserQuiz2() {
-		retake.click();
-		question1.click();
-		nextButton.click();
-		question2.click();
-		nextButton.click();
-		question3.click();
-		nextButton.click();
-		question4.click();
-		nextButton.click();
-		question5.click();
-		nextButton.click();
-		question6.click();
-		nextButton.click();
-		question7V.click();
-		nextButton.click();
-		question8V.click();
-		nextButton.click();
-		question9V.click();
-		nextButton.click();
-		question10V.click();
-		nextButton.click();
-		question11V.click();
-		nextButton.click();
-		question12.click();
-		nextButton.click();
-		question13.click();
-		nextButton.click();
-		question14.click();
-		nextButton.click();
-		question15.click();
-		nextButton.click();
-		question16.click();
+
+	WebElement WebElement ;
+	public WebElement getresponse(String indexreponse ) {
+		
+		if (indexreponse.contains("a") )
+			WebElement  = locator1;
+			locator1.click();
+			//nextButton.click();
+		if (indexreponse.contains("b") )
+			WebElement = locator2;
+			locator2.click();
+			//nextButton.click();
+		 if (indexreponse.contains("c") )
+			WebElement =  locator3;
+			 locator3.click();
+		   // nextButton.click();
+		 if (indexreponse.contains("d") )
+			 WebElement =  locator4;
+			locator4.click();
+			//nextButton.click();
+		 if (indexreponse.contains("e") )
+			WebElement= locator5;
+			 locator3.click();
+		    // nextButton.click();
+		return WebElement ;
+				
+	}
+	public WebElement getNext() {
+		return nextButton;
+	}
+	public void clotureQuiz (){
 		TerminerButton.click();
 		ConfirmerTerminer.click();
 	}

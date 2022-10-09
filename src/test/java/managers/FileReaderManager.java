@@ -16,15 +16,16 @@ import enums.EnvironmentType;
 
 public class FileReaderManager {
 
-	private static FileReaderManager fileReaderManager = new FileReaderManager();
-	
+	public static WebDriver driver;
+	//private static FileReaderManager fileReaderManager = new FileReaderManager();
+	private static FileReaderManager fileReaderManager = new FileReaderManager( driver);
 
 	
-	public static WebDriver driver;
+
 	private Properties properties;
 	private final String propertyFilePath= "configs//Configuation.properties";
 
-	public FileReaderManager(){
+	public FileReaderManager(WebDriver driver){
 		BufferedReader reader;
 		try {
 			reader = new BufferedReader(new FileReader(propertyFilePath));
@@ -92,12 +93,11 @@ public class FileReaderManager {
 	}
 
 public void initialization() {
-        
-		System.setProperty("webdriver.chrome.driver", properties.getProperty("pathDriver"));
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get(properties.getProperty("URL"));
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+	driver = new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.get("https://proservices-training-company.com/dev-proservices/cours/istqb-fondation-examen-blanc-technique-conception-test/");
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	 public static FileReaderManager getInstance( ) {
