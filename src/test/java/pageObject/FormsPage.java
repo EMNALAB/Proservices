@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.Select;
 
 public class FormsPage {
 	WebDriver driver;
-	
 	@FindBy(name  = "your-name")
 	WebElement nom;
 	@FindBy(name  = "your-email")
@@ -22,25 +21,12 @@ public class FormsPage {
 	@FindBy(xpath  = "//input[@value='ENVOYER']")
 	WebElement butonenvoyer;
 	//Votre message a bien été envoyé. Merci.
-	@FindBy(xpath  = "//div[@class='wpcf7-response-output']")
+	@FindBy(xpath  = "//div[1]/div[1]/form[1]/div[2]")
 	WebElement finalmsg;
-	@FindBy(xpath  = "//li[1]//div[1]//div[2]")
-	WebElement nomf;
-	@FindBy(xpath  = "//div[contains(@class,'rwmb-field rwmb-email-wrapper')]//div[2]")
-	WebElement emailf;
-	@FindBy(xpath  = "//div[@class='rwmb-field rwmb-text-wrapper']//div[@class='rwmb-input']")
-	WebElement telf;
-	@FindBy(xpath  = "//textarea[@id='bat_message']")
-	WebElement msgf;
-	@FindBy(xpath  = "//button[normalize-space()='Envoyer']")
-	WebElement sendbouttonf;
-	
-	
 	public FormsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
 	public void fillContactUsForm(String NOM, String EMAIL, String SUJET, String MESSAGE) {
 		//Select select = new Select(driver.findElement(subjectHeading));
 		JavascriptExecutor js =((JavascriptExecutor)driver);
@@ -50,17 +36,13 @@ public class FormsPage {
 		email.sendKeys(EMAIL);
 		sujet.sendKeys(SUJET);
 		msg.sendKeys(MESSAGE);
-		
 	}
 	public void clickSend()  {
-		
 		butonenvoyer.click();
 	}
-	public void checkResult()  {
-		
-		//sendbouttonf.click();
-		
+	public void checkResult(String message)  {
+		String actualResult = finalmsg.getText();
+		String expectedResult = message;
+		Assert.assertEquals(expectedResult,actualResult);
 	}
-	
-	
 }

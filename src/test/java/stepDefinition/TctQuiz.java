@@ -9,17 +9,17 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pageObject.TctQuizPo;
 import managers.FileReaderManager;
-import managers.TestBase;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class TctQuiz extends TestBase {
+//public class TctQuiz extends TestBase {
+	public class TctQuiz {
 	public TctQuiz() throws IOException {
 		super(); // executer test base contructror
 
 	}
-	TestBase testbase;
+
 	WebDriver driver;
 	TctQuizPo tctquizpo;
 	FileReaderManager filereadermanager;
@@ -42,14 +42,23 @@ public class TctQuiz extends TestBase {
 	
 	@When("^I anserwer question number \"([^\"]*)\"$")
 	public void i_anserwer_question_number(String response) throws Throwable {
-		tctquizpo.getresponse(response).click();
-		tctquizpo.getNext();
+
+		tctquizpo.getresponse(response);
+		//tctquizpo.getNext();
+		//tctquizpo.clotureQuiz();
+
+	}
+	@When("^I anserwer last question number \"([^\"]*)\"$")
+	public void i_anserwer_last_question_number(String response) throws Throwable {
+		tctquizpo.getresponselast(response);
+	}
+	@When("^I click to finish button$")
+	public void i_click_to_finish_button() throws Throwable {
 		tctquizpo.clotureQuiz();
 	}
-
 	@Then("^result should be displayed \"([^\"]*)\"$")
 	public void result_should_be_displayed(String expected) throws Throwable {
-
+		tctquizpo.checkResult(expected);
 	}
 	@After
 	public void quit() {

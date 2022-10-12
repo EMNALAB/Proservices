@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\beaut\Downloads\simpleseleniumbdd"/>
 			<item value="C:\Users\beaut\Downloads\Proservices-20220711T192147Z-001\Proservices"/>
 		</list>
 		<list key="projectNameTemplate">

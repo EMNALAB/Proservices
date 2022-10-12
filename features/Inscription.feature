@@ -1,17 +1,33 @@
+@Register
 Feature: Register
+  Description: As a user I want to register
 
-@RegisterForm
-  Scenario Outline: fill out the register form
-    Given I nagigate to home page
+  Background: home page is launched
+    Given I navigate to home page
+    And I access the registration form
+
+  @Valid_Register_Form
+    Scenario Outline: enter valid data
     When I fill the form  "<SheetName>" and rownumber <RowNumber>
-    And validatation
-    Then  message is displayed
+    And validation
+    Then  user space must be displayed
+    And click to logout button
 
-    Examples: 
+    Examples:
       |SheetName|RowNumber|
-      |Register|0|
-      |Register|1|
-      |Register|2| 
-      |Register|4| 
+      |ValidRegister|0|
+
+  @Invalid_Register_Form
+    Scenario Outline: enter invalid data
+      When I fill the form  "<SheetName>" and rownumber <RowNumber>
+      And validation
+      Then  "<errorMessage>" is displayed
+
+      Examples:
+        |SheetName|RowNumber|errorMessage|
+        |Invalid_Register|0|Erreur : cet identifiant est déjà utilisé. Veuillez en choisir un autre.|
+        |Invalid_Register|1|Erreur : cette adresse e-mail est déjà utilisée. Veuillez en choisir une autre.|
+        |Invalid_Register|2|Erreur : l’adresse e-mail est incorrecte.|
+        |Invalid_Register|4|Erreur : le mot de passe et la confirmation doivent etre identique.|
 
       

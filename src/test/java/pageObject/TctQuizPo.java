@@ -93,12 +93,12 @@ public class TctQuizPo {
 		
 	@FindBy(xpath  = "//input[@value='1612288551725960199227b1366']")
 	WebElement question16;
-	@FindBy(xpath  = "//button[normalize-space()='Terminer']")
+	@FindBy(xpath  = "//div[3]/form[1]/button[1]")
 	WebElement TerminerButton;
-	@FindBy(xpath  = "//button[normalize-space()='Ben Oui']")
+	@FindBy(xpath  = "//div[1]/div[1]/div[3]/button[1]")
 	WebElement ConfirmerTerminer;
-	@FindBy(xpath  = "//div[contains(@class,'message-error')]")
-	WebElement check1;
+	@FindBy(xpath  = "//div[2]/div[1]/div[1]/div[1]/div[2]")
+	WebElement msg;
 	
 	
 	
@@ -112,7 +112,7 @@ public class TctQuizPo {
 	
 	public void authentification() {
 		loginButton.click();
-		username.sendKeys("patrick");
+		username.sendKeys("ZAKRAOUTASNIM");
 		password.sendKeys("12345");
 		cnxButton.click();
 		JavascriptExecutor js =((JavascriptExecutor)driver);
@@ -123,44 +123,102 @@ public class TctQuizPo {
 	}
 	
 
-	public void checkResult1() {
-		String actualResult =check1.getText();
-		String expectedResult = "Your quiz grade failed. The result is 31.3% (the requirement is 65%)."; 
-		Assert.assertEquals(expectedResult,actualResult);
-		
-	}
+
 
 	WebElement WebElement ;
-	public WebElement getresponse(String indexreponse ) {
-		
-		if (indexreponse.contains("a") )
-			WebElement  = locator1;
+	//public WebElement getresponse(String indexreponse ) {
+	public void getresponse(String indexreponse ) {
+
+		if (indexreponse.contains("a")){
+			WebElement = locator1;
+			//Thread.sleep(3000);
 			locator1.click();
-			//nextButton.click();
-		if (indexreponse.contains("b") )
+			System.out.println("ligne 141");
+			//Thread.sleep(3000);
+			nextButton.click();
+		}
+		 else if (indexreponse.contains("b")){
 			WebElement = locator2;
+			//Thread.sleep(3000);
 			locator2.click();
-			//nextButton.click();
-		 if (indexreponse.contains("c") )
-			WebElement =  locator3;
-			 locator3.click();
-		   // nextButton.click();
-		 if (indexreponse.contains("d") )
-			 WebElement =  locator4;
+			System.out.println("ligne 149");
+			//Thread.sleep(3000);
+			nextButton.click();}
+		else if (indexreponse.contains("c")){
+			WebElement = locator3;
+			//Thread.sleep(3000);
+			locator3.click();
+			System.out.println("ligne 156");
+			//Thread.sleep(3000);
+			nextButton.click();}
+		 else if (indexreponse.contains("d")){
+			WebElement = locator4;
+			//Thread.sleep(3000);
 			locator4.click();
-			//nextButton.click();
-		 if (indexreponse.contains("e") )
-			WebElement= locator5;
-			 locator3.click();
-		    // nextButton.click();
-		return WebElement ;
-				
+			System.out.println("ligne 163");
+			//Thread.sleep(3000);
+			nextButton.click();}
+		else {
+			//(indexreponse.contains("e") )
+			WebElement = locator5;
+			//Thread.sleep(3000);
+			locator3.click();
+			//Thread.sleep(3000);
+			nextButton.click();
+		}
+
+		 // return WebElement;
+
+		}
+
+
+
+	public void getresponselast(String indexreponse ) throws InterruptedException {
+
+		if (indexreponse.contains("a")){
+			WebElement = locator1;
+			Thread.sleep(3000);
+			locator1.click();
+
+		}
+		else if (indexreponse.contains("b")){
+			WebElement = locator2;
+			Thread.sleep(3000);
+			locator2.click();
+			}
+		else if (indexreponse.contains("c")){
+			WebElement = locator3;
+			Thread.sleep(3000);
+			locator3.click();
+			}
+		else if (indexreponse.contains("d")){
+			WebElement = locator4;
+			Thread.sleep(3000);
+			locator4.click();
+			}
+		else {
+			//(indexreponse.contains("e") )
+			WebElement = locator5;
+			Thread.sleep(3000);
+			locator3.click();
+		}
+
+
 	}
-	public WebElement getNext() {
-		return nextButton;
-	}
-	public void clotureQuiz (){
+
+	//public WebElement getNext() {
+		//return nextButton;
+	//}
+	public void clotureQuiz () throws InterruptedException {
 		TerminerButton.click();
+		Thread.sleep(3000);
 		ConfirmerTerminer.click();
+	}
+	public void checkResult(String expected){
+		String actualResult = msg.getText();
+
+		String expectedResult = expected;
+		Assert.assertTrue(actualResult.contains(expected));
+
 	}
 }

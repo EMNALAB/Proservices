@@ -2,16 +2,16 @@ Feature: contact us forms
 
   @contactus
   Scenario Outline: fill out the contact us form
-    Given I nagigate to contact us page
+    Given I navigate to contact us page
     When I fill the form from given sheetname "<SheetName>" and rownumber <RowNumber>
     And I click on send button
-    Then successufull message should be displayed
+    Then check the "<message>" that will be displayed
 
     Examples: 
-      |SheetName|RowNumber|
-      |ContactezNous |0|
-      |ContactezNous |1|
-      |ContactezNous |2|
+      |SheetName|RowNumber|message|
+      |ContactezNous |0|Votre message a bien été envoyé. Merci.|
+      |ContactezNous |1|Votre message a bien été envoyé. Merci.|
+      |ContactezNous |2|Des erreurs de validation se sont produites. Veuillez confirmer les champs et le soumettre à nouveau.|
       
       
     

@@ -31,7 +31,7 @@ public class FormsSteps {
 	TrainingForm trainingform; 
 	
 	
-    @Given("^I nagigate to contact us page$")
+    @Given("^I navigate to contact us page$")
     public void i_nagigate_to_contact_us_page() throws Throwable {
     	System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		driver = new ChromeDriver();
@@ -47,12 +47,10 @@ public class FormsSteps {
 		ExcelReader reader = new ExcelReader();
 		List<Map<String,String>> testData = 
 				reader.getData("C:\\Users\\beaut\\Downloads\\DataTest.xlsx", sheetName);
-		
 		String nom = testData.get(rowNumber).get("NOM");
 		String email = testData.get(rowNumber).get("EMAIL");
 		String sujet = testData.get(rowNumber).get("SUJET");
 		String message = testData.get(rowNumber).get("MESSAGE");
-		
 		formspage.fillContactUsForm(nom, email, sujet, message);
 
 	}
@@ -65,11 +63,12 @@ public class FormsSteps {
     	formspage.clickSend();
     	robot.delay(3000);
     }
-    @Then("^successufull message should be displayed$")
-    public void successufull_message_should_be_displayed() throws Throwable {
-    	formspage.checkResult();
-    }
-    @After
+	@Then("^check the \"([^\"]*)\" that will be displayed$")
+	public void check_the_that_will_be_displayed(String message) throws Throwable {
+		formspage.checkResult(message);
+	}
+
+	@After
 	public void quit() {
 		driver.quit();
 	}

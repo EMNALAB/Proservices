@@ -19,15 +19,16 @@ Feature: Test the quiz ISTQB foundation
     And I anserwer question number "<thirteen>"
     And I anserwer question number "<forten>"
     And I anserwer question number "<fiveten>"
-    And I anserwer question number "<sixten>"
+    And I anserwer last question number "<sixten>"
+    And I click to finish button
     Then result should be displayed "<expected>"
     
     Examples: 
       |one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|forten|fiveten|sixten|expected|
-      |a|a|a|a|a|a|a|b|b|a|c|c|b|a|a|b|Your quiz grade failed. The result is 0% (the requirement is 65%).|
-      |d|c|c|c|c|c|c|a|c|b|d|a|a|b|b|a|Your quiz grade passed. The result is 100% (the requirement is 65%).|
-      |d|c|c|c|c|c|c|a|c|b|d|a|a|a|a|b|Your quiz grade passed. The result is 66.3% (the requirement is 65%).|
-      |d|c|c|c|c|c|c|a|c|b|d|b|a|b|d|c|Your quiz grade passed. The result is 62.3% (the requirement is 65%).|
+      |a|a|a|a|a|a|a|b|b|a|c|c|b|a|a|b|Your quiz grade failed|
+      |d|c|c|c|c|c|c|a|c|b|d|a|a|b|b|a|Your quiz grade passed|
+      |c|d|a|c|c|c|c|a|c|b|d|a|a|b|b|a|Your quiz grade passed|
+      |b|a|a|b|c|c|c|a|c|b|d|b|a|b|b|a|Your quiz grade passed|
     
     
    

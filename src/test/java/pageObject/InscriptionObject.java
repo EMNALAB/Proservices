@@ -1,5 +1,7 @@
 package pageObject;
 
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,6 +35,9 @@ public class InscriptionObject {
 	
 	@FindBy(css = "#login-popup-3 > div > div > a.logout")
 	WebElement home;
+	@FindBy(xpath = "//p[@class='message message-error']")
+	WebElement errorMsg;
+
 	
 
 	
@@ -58,5 +63,18 @@ public class InscriptionObject {
 	public void clickSendf()  {
 			
 		createAccountButton.click();
+	}
+	public boolean chekHomPage(){
+		Boolean isPresent = home.isDisplayed();
+		System.out.println(isPresent);
+		return isPresent;
+	}
+	public void checkMsg(String message)  {
+		String actualResult = errorMsg.getText();
+		String expectedResult = message;
+		Assert.assertEquals(expectedResult,actualResult);
+	}
+	public void deconnexion(){
+		home.click();
 	}
 }
