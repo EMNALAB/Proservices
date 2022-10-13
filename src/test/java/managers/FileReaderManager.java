@@ -92,7 +92,7 @@ public class FileReaderManager {
 		else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");		
 	}
 
-public void initialization() {
+public void Setup() {
 	System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 	driver = new ChromeDriver();
 	driver.manage().window().maximize();

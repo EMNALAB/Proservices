@@ -21,14 +21,15 @@ Feature: Manage profile
     Scenario Outline: update personnel information
       When I click to main icon
       And I fill the form with information "<sheetName>" and rownumber <rowNumber>
-      And validation
+      And I validate modification
       Then check confirmation "<message>"
 
     Examples:
       |sheetName|rowNumber|message|
       |personnel_info|0|Information du compte mis à jour avec succès.|
       |personnel_info|1|Information du compte mis à jour avec succès.|
-      |personnel_info|2|Information du compte mis à jour avec succès.|
+
+
 
   @update_password
     Scenario Outline: update_password
