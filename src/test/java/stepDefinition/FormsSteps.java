@@ -45,8 +45,9 @@ public class FormsSteps {
     	//throws InvalidFormatException, IOException 
     	formspage = new FormsPage(driver);
 		ExcelReader reader = new ExcelReader();
-		List<Map<String,String>> testData = 
-				reader.getData("C:\\Users\\beaut\\Downloads\\DataTest.xlsx", sheetName);
+		List<Map<String,String>> testData =
+				reader.getData(".\\TestData\\DataTest.xlsx", sheetName);
+
 		String nom = testData.get(rowNumber).get("NOM");
 		String email = testData.get(rowNumber).get("EMAIL");
 		String sujet = testData.get(rowNumber).get("SUJET");

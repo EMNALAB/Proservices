@@ -53,7 +53,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Oct 13, 2022 04:08:21 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Oct 14, 2022 01:59:28 AM</span>
 				</a>
 			</li>
 			<li>
@@ -80,7 +80,6 @@
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
 						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
-						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -93,8 +92,8 @@
 					<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@Manage_Profile</a></li>
-					<li><a href='#'>@update_password</a></li>
+					<li><a href='#'>@Auth</a></li>
+					<li><a href='#'>@authentification</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -157,10 +156,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='75%'><span class='strong'>3</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='33.333%'><span class='strong'>1</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='25%'>1</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='66.667%'>2</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -172,10 +171,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='83.333%'><span class='strong'>20</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='83.333%'><span class='strong'>10</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='4.167%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='12.5%'>3</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='16.667%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -191,48 +190,116 @@
 				
 				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Manage profile</span>
-						<span class='test-time'>Oct 13, 2022 04:08:21 AM</span>
+						<span class='test-name'>Authentification</span>
+						<span class='test-time'>Oct 14, 2022 01:59:28 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenariooutline node' test-id='2' status='fail'>
-	<span class='duration right label'>0h 1m 14s+654ms</span>
+	<span class='duration right label'>0h 1m 46s+391ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
-		<span class="desc-text">update_password</span>
+		<span class="desc-text">check invalid authentication</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='3' class='node scenario fail' status='fail'>
+		<li test-id='3' class='node scenario pass' status='pass'>
 			<div class='category-list'>
-				<span class='category label white-text'>@Manage_Profile</span>
-				<span class='category label white-text'>@update_password</span>
+				<span class='category label white-text'>@Auth</span>
+				<span class='category label white-text'>@authentification</span>
 			</div>
 			
 			<b>Scenario</b>
 			
-			<span class="bdd-step-name">update_password</span>
+			<span class="bdd-step-name">check invalid authentication</span>
 			
 				<ul class='steps'>
 					<li test-id='4' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given open app</span>
+						<span class="bdd-step-name">Given access the authentication page</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='5' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And access my profile</span>
+					<li test-id='5' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When enter data "logininvalid" and rownumber 0</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='6' class='node when fail' status='fail'><b>When</b>
-						<span class="bdd-step-name">When I click to password icon</span>
-							<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='Mot de passe']"}
+					<li test-id='6' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on connection button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='7' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then check the "The password is incorrect"</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='8' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Auth</span>
+				<span class='category label white-text'>@authentification</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">check invalid authentication</span>
+			
+				<ul class='steps'>
+					<li test-id='9' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given access the authentication page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='10' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When enter data "logininvalid" and rownumber 1</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='11' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on connection button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='12' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then check the "Invalid username or incorrect password!"</span>
+							<div class='pre'><textarea>org.junit.ComparisonFailure: expected:<[Invalid username or incorrect password!]> but was:<[The password is incorrect]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at pageObject.AuthObject.checkResult(AuthObject.java:40)
+	at stepDefinition.AuthSteps.check_the(AuthSteps.java:60)
+	at ✽.Then check the "Invalid username or incorrect password!"(Authentification.feature:10)
+</textarea></div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='13' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Auth</span>
+				<span class='category label white-text'>@authentification</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">check invalid authentication</span>
+			
+				<ul class='steps'>
+					<li test-id='14' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given access the authentication page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='15' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When enter data "logininvalid" and rownumber 2</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='16' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on connection button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='17' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then check the "Invalid username or incorrect password!"</span>
+							<div class='pre'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=106.0.5249.119)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'LAPTOP-1901DLOF', ip: '192.168.1.227', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [304199edbf80f4f0c5267d82da979e53, findElement {using=xpath, value=//a[normalize-space()='Mot de passe']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\beaut\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60046}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60046/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 304199edbf80f4f0c5267d82da979e53
+Command: [6983e437550d60537ab12bbc0e4c32ab, findElement {using=xpath, value=//article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\beaut\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:55693}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55693/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6983e437550d60537ab12bbc0e4c32ab
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -250,134 +317,11 @@ Session ID: 304199edbf80f4f0c5267d82da979e53
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at com.sun.proxy.$Proxy21.click(Unknown Source)
-	at pageObject.ProfilePageObj.iconepawword(ProfilePageObj.java:129)
-	at stepDefinition.ProfileSteps.i_click_to_password_icon(ProfileSteps.java:104)
-	at ✽.When I click to password icon(ManageProfile.feature:36)
+	at com.sun.proxy.$Proxy21.getText(Unknown Source)
+	at pageObject.AuthObject.checkResult(AuthObject.java:38)
+	at stepDefinition.AuthSteps.check_the(AuthSteps.java:60)
+	at ✽.Then check the "Invalid username or incorrect password!"(Authentification.feature:10)
 </pre></div>
-					</li>
-					<li test-id='7' class='node and skip' status='skip'><b>And</b>
-						<span class="bdd-step-name">And Fill "change_password" and rownumber 0</span>
-							<div class='pre'>skipped</div>
-					</li>
-					<li test-id='8' class='node and skip' status='skip'><b>And</b>
-						<span class="bdd-step-name">And click to save button</span>
-							<div class='pre'>skipped</div>
-					</li>
-					<li test-id='9' class='node then skip' status='skip'><b>Then</b>
-						<span class="bdd-step-name">Then check "L'ancien mot de passe est incorrect !"</span>
-							<div class='pre'>skipped</div>
-					</li>
-				</ul>
-		</li>
-		<li test-id='10' class='node scenario pass' status='pass'>
-			<div class='category-list'>
-				<span class='category label white-text'>@Manage_Profile</span>
-				<span class='category label white-text'>@update_password</span>
-			</div>
-			
-			<b>Scenario</b>
-			
-			<span class="bdd-step-name">update_password</span>
-			
-				<ul class='steps'>
-					<li test-id='11' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given open app</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='12' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And access my profile</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='13' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When I click to password icon</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='14' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And Fill "change_password" and rownumber 1</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='15' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And click to save button</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='16' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then check "Confirmation du mot de passe incorrecte !"</span>
-							<div class='pre'>passed</div>
-					</li>
-				</ul>
-		</li>
-		<li test-id='17' class='node scenario pass' status='pass'>
-			<div class='category-list'>
-				<span class='category label white-text'>@Manage_Profile</span>
-				<span class='category label white-text'>@update_password</span>
-			</div>
-			
-			<b>Scenario</b>
-			
-			<span class="bdd-step-name">update_password</span>
-			
-				<ul class='steps'>
-					<li test-id='18' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given open app</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='19' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And access my profile</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='20' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When I click to password icon</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='21' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And Fill "change_password" and rownumber 2</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='22' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And click to save button</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='23' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then check "L'ancien mot de passe est incorrect !"</span>
-							<div class='pre'>passed</div>
-					</li>
-				</ul>
-		</li>
-		<li test-id='24' class='node scenario pass' status='pass'>
-			<div class='category-list'>
-				<span class='category label white-text'>@Manage_Profile</span>
-				<span class='category label white-text'>@update_password</span>
-			</div>
-			
-			<b>Scenario</b>
-			
-			<span class="bdd-step-name">update_password</span>
-			
-				<ul class='steps'>
-					<li test-id='25' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given open app</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='26' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And access my profile</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='27' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When I click to password icon</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='28' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And Fill "change_password" and rownumber 3</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='29' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And click to save button</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='30' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then check "Confirmation du mot de passe incorrecte !"</span>
-							<div class='pre'>passed</div>
 					</li>
 				</ul>
 		</li>
@@ -437,15 +381,65 @@ Session ID: 304199edbf80f4f0c5267d82da979e53
 				
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@Manage_Profile</span>
+						<span class='category-name'>@Auth</span>
 						<span class='category-status right'>
-							<span class='label pass'>3</span>
+							<span class='label pass'>1</span>
+							<span class='label fail'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							<span class='label red lighten-1 white-text'>Failed: 3</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Oct 14, 2022 01:59:28 AM</td>
+										<td class='linked' test-id='1'>Authentification</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Oct 14, 2022 01:59:28 AM</td>
+										<td class='linked' test-id='3'>Authentification.check invalid authentication.check invalid authentication</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Oct 14, 2022 01:59:40 AM</td>
+										<td class='linked' test-id='8'>Authentification.check invalid authentication.check invalid authentication</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Oct 14, 2022 01:59:48 AM</td>
+										<td class='linked' test-id='13'>Authentification.check invalid authentication.check invalid authentication</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@authentification</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
 							<span class='label fail'>2</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 3</span>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
 							<span class='label red lighten-1 white-text'>Failed: 2</span>
 							
 						</div>
@@ -461,79 +455,19 @@ Session ID: 304199edbf80f4f0c5267d82da979e53
 								</thead>
 								<tbody>
 									<tr>
-										<td>Oct 13, 2022 04:08:21 AM</td>
-										<td class='linked' test-id='1'>Manage profile</td>
+										<td>Oct 14, 2022 01:59:28 AM</td>
+										<td class='linked' test-id='3'>Authentification.check invalid authentication.check invalid authentication</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Oct 14, 2022 01:59:40 AM</td>
+										<td class='linked' test-id='8'>Authentification.check invalid authentication.check invalid authentication</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 									<tr>
-										<td>Oct 13, 2022 04:08:21 AM</td>
-										<td class='linked' test-id='3'>Manage profile.update_password.update_password</td>
+										<td>Oct 14, 2022 01:59:48 AM</td>
+										<td class='linked' test-id='13'>Authentification.check invalid authentication.check invalid authentication</td>
 										<td><span class='test-status fail'>fail</span></td>
-									</tr>
-									<tr>
-										<td>Oct 13, 2022 04:08:44 AM</td>
-										<td class='linked' test-id='10'>Manage profile.update_password.update_password</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Oct 13, 2022 04:09:02 AM</td>
-										<td class='linked' test-id='17'>Manage profile.update_password.update_password</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Oct 13, 2022 04:09:21 AM</td>
-										<td class='linked' test-id='24'>Manage profile.update_password.update_password</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-				<li class='category displayed active'>
-					<div class='category-heading'>
-						<span class='category-name'>@update_password</span>
-						<span class='category-status right'>
-							<span class='label pass'>3</span>
-							<span class='label fail'>1</span>
-						</span>
-					</div>
-					<div class='category-content hide'>
-						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 3</span>
-							<span class='label red lighten-1 white-text'>Failed: 1</span>
-							
-						</div>
-					
-						<div class='category-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Oct 13, 2022 04:08:21 AM</td>
-										<td class='linked' test-id='3'>Manage profile.update_password.update_password</td>
-										<td><span class='test-status fail'>fail</span></td>
-									</tr>
-									<tr>
-										<td>Oct 13, 2022 04:08:44 AM</td>
-										<td class='linked' test-id='10'>Manage profile.update_password.update_password</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Oct 13, 2022 04:09:02 AM</td>
-										<td class='linked' test-id='17'>Manage profile.update_password.update_password</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Oct 13, 2022 04:09:21 AM</td>
-										<td class='linked' test-id='24'>Manage profile.update_password.update_password</td>
-										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -579,7 +513,7 @@ Session ID: 304199edbf80f4f0c5267d82da979e53
 
                         <li class='exception displayed active'>
                             <div class='exception-heading'>
-                                <span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
+                                <span class='exception-name'>org.junit.ComparisonFailure</span>
                                 <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
                             </div>
                             <div class='exception-content hide'>
@@ -594,17 +528,49 @@ Session ID: 304199edbf80f4f0c5267d82da979e53
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Oct 13, 2022 04:08:34 AM</td>
-                                                        <td class='linked' test-id='6'>Manage profile.update_password.update_password.When I click to password icon</td>
-                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='Mot de passe']"}
+                                                        <td>Oct 14, 2022 01:59:48 AM</td>
+                                                        <td class='linked' test-id='12'>Authentification.check invalid authentication.check invalid authentication.Then check the "Invalid username or incorrect password!"</td>
+                                                        <td><pre><textarea>org.junit.ComparisonFailure: expected:<[Invalid username or incorrect password!]> but was:<[The password is incorrect]>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at pageObject.AuthObject.checkResult(AuthObject.java:40)
+	at stepDefinition.AuthSteps.check_the(AuthSteps.java:60)
+	at ✽.Then check the "Invalid username or incorrect password!"(Authentification.feature:10)
+</textarea></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.openqa.selenium.NoSuchWindowException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Oct 14, 2022 02:01:14 AM</td>
+                                                        <td class='linked' test-id='17'>Authentification.check invalid authentication.check invalid authentication.Then check the "Invalid username or incorrect password!"</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=106.0.5249.119)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.4.0', revision: 'e5c75ed026a'
 System info: host: 'LAPTOP-1901DLOF', ip: '192.168.1.227', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [304199edbf80f4f0c5267d82da979e53, findElement {using=xpath, value=//a[normalize-space()='Mot de passe']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\beaut\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60046}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60046/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 304199edbf80f4f0c5267d82da979e53
+Command: [6983e437550d60537ab12bbc0e4c32ab, findElement {using=xpath, value=//article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\beaut\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:55693}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55693/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6983e437550d60537ab12bbc0e4c32ab
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -622,10 +588,10 @@ Session ID: 304199edbf80f4f0c5267d82da979e53
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at com.sun.proxy.$Proxy21.click(Unknown Source)
-	at pageObject.ProfilePageObj.iconepawword(ProfilePageObj.java:129)
-	at stepDefinition.ProfileSteps.i_click_to_password_icon(ProfileSteps.java:104)
-	at ✽.When I click to password icon(ManageProfile.feature:36)
+	at com.sun.proxy.$Proxy21.getText(Unknown Source)
+	at pageObject.AuthObject.checkResult(AuthObject.java:38)
+	at stepDefinition.AuthSteps.check_the(AuthSteps.java:60)
+	at ✽.Then check the "Invalid username or incorrect password!"(Authentification.feature:10)
 </pre></pre></td>
                                                     </tr>
                                         </tbody>
@@ -658,31 +624,31 @@ Session ID: 304199edbf80f4f0c5267d82da979e53
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>4</div>
+					<div class='panel-lead'>3</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>24</div>
+					<div class='panel-lead'>12</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Oct 13, 2022 04:08:21 AM</div>
+					<div class='panel-lead'>Oct 14, 2022 01:59:28 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Oct 13, 2022 04:09:37 AM</div>
+			 		<div class='panel-lead'>Oct 14, 2022 02:01:14 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>75,401ms</div>
+					<div class='panel-lead'>106,520ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -698,21 +664,21 @@ Session ID: 304199edbf80f4f0c5267d82da979e53
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>@Manage_Profile</td>
+							<td>@Auth</td>
+							<td>1</td>
 							<td>3</td>
-							<td>2</td>
 							<td>0</td>
 							<td>
-									60%
+									25%
 							</td>
 						</tr>
 						<tr>
-							<td>@update_password</td>
-							<td>3</td>
+							<td>@authentification</td>
 							<td>1</td>
+							<td>2</td>
 							<td>0</td>
 							<td>
-									75%
+									33.333%
 							</td>
 						</tr>
 					</table>
@@ -736,23 +702,23 @@ Session ID: 304199edbf80f4f0c5267d82da979e53
 				skipParent: 0,
 				exceptionsParent: 1,
 				
-				passChild: 3,
-				failChild: 1,
+				passChild: 1,
+				failChild: 2,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 1,
+				exceptionsChild: 2,
 				
-				passGrandChild: 20,
-				failGrandChild: 1,
+				passGrandChild: 10,
+				failGrandChild: 2,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 3,
+				skipGrandChild: 0,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 4,
+				exceptionsGrandChild: 2,
 			};
 		</script>
 		

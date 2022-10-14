@@ -16,36 +16,40 @@ import cucumber.api.java.en.When;
 import pageObject.FormsPage;
 import pageObject.SignInPageObj;
 import pageObject.ProfilePageObj;
+import pageObject.TctQuizPo;
 
 public class ProfileSteps {
 	WebDriver driver;
 	SignInPageObj signInPageObj;
 	ProfilePageObj profilPageObj;
+	TctQuizPo quizpo;
 	
 	@Given("^open app$")
 	public void open_app() throws Throwable {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://proservices-training-company.com/dev-proservices/profile/EMNAlabidi/settings/");
+		driver.get("https://proservices-training-company.com/dev-proservices/profile/EMNAlabidi/settings/avatar/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	}
 
 	@Given("^access my profile$")
 	public void access_my_profile() throws Throwable {
-		signInPageObj = new SignInPageObj(driver);
+
+		//signInPageObj = new SignInPageObj(driver);
 		profilPageObj = new ProfilePageObj(driver);
-		signInPageObj.displaypopup();
-		signInPageObj.enterLogin();
-		signInPageObj.enterPwd();
-		signInPageObj.validate();
+		profilPageObj.accesProfile();
+		//signInPageObj.displaypopup();
+		//signInPageObj.enterLogin();
+		//signInPageObj.enterPwd();
+		//signInPageObj.validate();
 		
 	}
 
 	@When("^click to upload button$")
 	public void click_to_upload_button() throws Throwable {
-		profilPageObj.accesProfile();
+		profilPageObj.changePicture();
 	}
 
 	@When("^chose picture$")

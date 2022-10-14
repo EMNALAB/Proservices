@@ -54,7 +54,14 @@ public class ProfilePageObj {
 	WebElement confirmpassword;
 	@FindBy(id = "submit")
 	WebElement validatemp;
-
+	@FindBy(xpath = "//li[@class='menu-right']//a[@class='login js-show-popup'][normalize-space()='Login']")
+	WebElement loginButton;
+	@FindBy(name  = "log")
+	WebElement username;
+	@FindBy(name = "pwd")
+	WebElement password;
+	@FindBy(name="wp-submit")
+	WebElement cnxButton;
 
 	public ProfilePageObj(WebDriver driver) {
 		this.driver= driver;
@@ -63,9 +70,14 @@ public class ProfilePageObj {
 	}
 	
 	public void accesProfile() throws  AWTException, InterruptedException {
-		
+		loginButton.click();
+		username.sendKeys("EMNALABIDI");
+		password.sendKeys("emna123");
+		cnxButton.click();
 		//settingButton.click();
-		avatarButton.click();
+		//avatarButton.click();
+	}
+	public void changePicture() throws  AWTException, InterruptedException {
 		uploadButton.click();
 		JavascriptExecutor js =((JavascriptExecutor)driver);
 		js.executeScript("scroll(0,500)");
