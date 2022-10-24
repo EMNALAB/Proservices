@@ -36,7 +36,7 @@ public class FormsSteps {
     	System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://proservices-training-company.com/dev-proservices/cabinet-de-formation-contact/");
+		driver.get("https://proservices-training-company.com/espace-test/cabinet-de-formation-contact/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 

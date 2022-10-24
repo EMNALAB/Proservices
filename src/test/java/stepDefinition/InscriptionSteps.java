@@ -22,7 +22,7 @@ public class InscriptionSteps {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://proservices-training-company.com/dev-proservices/");
+		driver.get("https://proservices-training-company.com/espace-test/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	@Given("^I access the registration form$")

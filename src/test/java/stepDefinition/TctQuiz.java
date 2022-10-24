@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://proservices-training-company.com/dev-proservices/cours/istqb-fondation-examen-blanc-technique-conception-test/");
+		driver.get("https://proservices-training-company.com/espace-test/cours/istqb-fondation-examen-blanc-technique-conception-test/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		tctquizpo = new TctQuizPo(driver);
 		tctquizpo.authentification();

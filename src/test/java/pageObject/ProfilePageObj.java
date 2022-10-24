@@ -118,6 +118,7 @@ public class ProfilePageObj {
 		js.executeScript("scroll(0,500)");
 		//select.selectByVisibleText(heading);
 		bibliog.clear();
+
 		bibliog.sendKeys(BIBLIOG);
 		fname.clear();
 		fname.sendKeys(FNAME);
@@ -129,7 +130,7 @@ public class ProfilePageObj {
 	}
 	public void valider() throws InterruptedException {
 		savechanges.click();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 	}
 	public void verifier_maj_personal_inf(String expected){
 		String actualResult = msgI.getText();

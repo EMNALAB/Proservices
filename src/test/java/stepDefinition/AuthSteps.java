@@ -28,7 +28,7 @@ public class AuthSteps {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://proservices-training-company.com/dev-proservices/compte/");
+        driver.get("https://proservices-training-company.com/espace-test/compte/");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         authobject = new AuthObject(driver);
     }
