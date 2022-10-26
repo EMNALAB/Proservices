@@ -13,7 +13,7 @@ import cucumber.api.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="features",glue={"stepDefinition"},
-//tags="@quiz_istqb",
+//tags="@authentification",
 
 		tags="@Manage_Profile,@contactus,@Register,@quiz_istqb,@authentification",
 		plugin = { "pretty", "html:target/cucumber-html-report", "json:target/cucumber.json",

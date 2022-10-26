@@ -112,7 +112,7 @@ public class TctQuizPo {
 	
 	public void authentification() {
 		loginButton.click();
-		username.sendKeys("ZAKRAOUTASNIM");
+		username.sendKeys("Sirinealoui");
 		password.sendKeys("12345");
 		cnxButton.click();
 		JavascriptExecutor js =((JavascriptExecutor)driver);
