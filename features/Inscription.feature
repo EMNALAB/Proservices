@@ -11,7 +11,7 @@ Feature: Register
     When I fill the form  "<SheetName>" and rownumber <RowNumber>
     And validation
     Then  user space must be displayed
-    And click to logout button
+
 
     Examples:
       |SheetName|RowNumber|
@@ -28,6 +28,6 @@ Feature: Register
         |Invalid_Register|0|Erreur : cet identifiant est déjà utilisé. Veuillez en choisir un autre.|
         |Invalid_Register|1|Erreur : cette adresse e-mail est déjà utilisée. Veuillez en choisir une autre.|
         |Invalid_Register|2|Erreur : l’adresse e-mail est incorrecte.|
-        |Invalid_Register|4|Erreur : le mot de passe et la confirmation doivent etre identique.|
+
 
       

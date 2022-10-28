@@ -20,10 +20,7 @@ public class AuthSteps {
     WebDriver driver;
     AuthObject authobject;
 
-
     @Given("^access the authentication page$")
-
-
     public void access_the_authentication_page() throws Throwable {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         driver = new ChromeDriver();
@@ -32,7 +29,6 @@ public class AuthSteps {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         authobject = new AuthObject(driver);
     }
-
     @When("^enter data \"([^\"]*)\" and rownumber (\\d+)$")
     public void enter_data_and_rownumber(String SheetName, int RowNumber) throws org.apache.poi.openxml4j.exceptions.InvalidFormatException, IOException {
         //public void i_fill_the_form_from_given_sheetname_and_rownumber(String sheetName, Integer rowNumber) throws org.apache.poi.openxml4j.exceptions.InvalidFormatException, IOException {
@@ -47,10 +43,6 @@ public class AuthSteps {
             authobject.putData(nom,email);
 
         }
-
-
-
-
 
     @When("^I click on connection button$")
     public void i_click_on_connection_button() throws Throwable {

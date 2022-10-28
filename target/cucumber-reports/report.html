@@ -53,7 +53,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Oct 26, 2022 09:24:13 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Oct 28, 2022 08:16:53 PM</span>
 				</a>
 			</li>
 			<li>
@@ -92,8 +92,9 @@
 					<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@Auth</a></li>
-					<li><a href='#'>@authentification</a></li>
+					<li><a href='#'>@Register</a></li>
+					<li><a href='#'>@Valid_Register_Form</a></li>
+					<li><a href='#'>@Invalid_Register_Form</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -156,10 +157,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='33.333%'><span class='strong'>1</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='75%'><span class='strong'>3</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='66.667%'>2</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='25%'>1</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -171,10 +172,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='83.333%'><span class='strong'>10</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='95.238%'><span class='strong'>20</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='16.667%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='4.762%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -190,114 +191,191 @@
 				
 				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Authentification</span>
-						<span class='test-time'>Oct 26, 2022 09:24:13 PM</span>
+						<span class='test-name'>Register</span>
+						<span class='test-time'>Oct 28, 2022 08:16:53 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenariooutline node' test-id='2' status='fail'>
-	<span class='duration right label'>0h 2m 0s+992ms</span>
+	<span class='duration right label'>0h 0m 41s+949ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
-		<span class="desc-text">check invalid authentication</span>
+		<span class="desc-text">enter valid data</span>
 	</div>
 	<ul class='steps'>
-		<li test-id='3' class='node scenario pass' status='pass'>
+		<li test-id='3' class='node scenario fail' status='fail'>
 			<div class='category-list'>
-				<span class='category label white-text'>@Auth</span>
-				<span class='category label white-text'>@authentification</span>
+				<span class='category label white-text'>@Register</span>
+				<span class='category label white-text'>@Valid_Register_Form</span>
 			</div>
 			
 			<b>Scenario</b>
 			
-			<span class="bdd-step-name">check invalid authentication</span>
+			<span class="bdd-step-name">enter valid data</span>
 			
 				<ul class='steps'>
 					<li test-id='4' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given access the authentication page</span>
+						<span class="bdd-step-name">Given I navigate to home page</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='5' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When enter data "logininvalid" and rownumber 0</span>
+					<li test-id='5' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I access the registration form</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='6' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And I click on connection button</span>
+					<li test-id='6' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I fill the form  "ValidRegister" and rownumber 0</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='7' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then check the "The password is incorrect"</span>
+					<li test-id='7' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And validation</span>
 							<div class='pre'>passed</div>
 					</li>
-				</ul>
-		</li>
-		<li test-id='8' class='node scenario fail' status='fail'>
-			<div class='category-list'>
-				<span class='category label white-text'>@Auth</span>
-				<span class='category label white-text'>@authentification</span>
-			</div>
-			
-			<b>Scenario</b>
-			
-			<span class="bdd-step-name">check invalid authentication</span>
-			
-				<ul class='steps'>
-					<li test-id='9' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given access the authentication page</span>
+					<li test-id='8' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user space must be displayed</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='10' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When enter data "logininvalid" and rownumber 1</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='11' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And I click on connection button</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='12' class='node then fail' status='fail'><b>Then</b>
-						<span class="bdd-step-name">Then check the "Invalid username or incorrect password!"</span>
-							<div class='pre'><textarea>org.junit.ComparisonFailure: expected:<[Invalid username or incorrect password!]> but was:<[The password is incorrect]>
-	at org.junit.Assert.assertEquals(Assert.java:115)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at pageObject.AuthObject.checkResult(AuthObject.java:40)
-	at stepDefinition.AuthSteps.check_the(AuthSteps.java:61)
-	at ✽.Then check the "Invalid username or incorrect password!"(Authentification.feature:10)
+					<li test-id='9' class='node and fail' status='fail'><b>And</b>
+						<span class="bdd-step-name">And click to logout button</span>
+							<div class='pre'><textarea>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=106.0.5249.119)
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'LAPTOP-1901DLOF', ip: '192.168.1.227', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cd739a976027cc0337e83218db441053, clickElement {id=9e53bce2-9af9-451f-83b4-4af7a159952a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\beaut\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51601}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51601/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (cd739a976027cc0337e83218db441053)] -> css selector: #login-popup-3 > div > div > a.logout]
+Session ID: cd739a976027cc0337e83218db441053
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy21.click(Unknown Source)
+	at pageObject.InscriptionObject.deconnexion(InscriptionObject.java:78)
+	at stepDefinition.InscriptionSteps.click_to_logout_button(InscriptionSteps.java:55)
+	at ✽.And click to logout button(Inscription.feature:14)
 </textarea></div>
 					</li>
 				</ul>
 		</li>
-		<li test-id='13' class='node scenario fail' status='fail'>
+	</ul>
+</div>
+<div class='scenariooutline node' test-id='10' status='pass'>
+	<span class='duration right label'>0h 1m 5s+838ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">enter invalid data</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='11' class='node scenario pass' status='pass'>
 			<div class='category-list'>
-				<span class='category label white-text'>@Auth</span>
-				<span class='category label white-text'>@authentification</span>
+				<span class='category label white-text'>@Register</span>
+				<span class='category label white-text'>@Invalid_Register_Form</span>
 			</div>
 			
 			<b>Scenario</b>
 			
-			<span class="bdd-step-name">check invalid authentication</span>
+			<span class="bdd-step-name">enter invalid data</span>
 			
 				<ul class='steps'>
-					<li test-id='14' class='node given pass' status='pass'><b>Given</b>
-						<span class="bdd-step-name">Given access the authentication page</span>
+					<li test-id='12' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I navigate to home page</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='15' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When enter data "logininvalid" and rownumber 2</span>
+					<li test-id='13' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I access the registration form</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='16' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And I click on connection button</span>
+					<li test-id='14' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I fill the form  "Invalid_Register" and rownumber 0</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='17' class='node then fail' status='fail'><b>Then</b>
-						<span class="bdd-step-name">Then check the "Invalid username or incorrect password!"</span>
-							<div class='pre'><textarea>org.junit.ComparisonFailure: expected:<[Invalid username or incorrect password!]> but was:<[The password is incorrect]>
-	at org.junit.Assert.assertEquals(Assert.java:115)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at pageObject.AuthObject.checkResult(AuthObject.java:40)
-	at stepDefinition.AuthSteps.check_the(AuthSteps.java:61)
-	at ✽.Then check the "Invalid username or incorrect password!"(Authentification.feature:10)
-</textarea></div>
+					<li test-id='15' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And validation</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='16' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then "Erreur : cet identifiant est déjà utilisé. Veuillez en choisir un autre." is displayed</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='17' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Register</span>
+				<span class='category label white-text'>@Invalid_Register_Form</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">enter invalid data</span>
+			
+				<ul class='steps'>
+					<li test-id='18' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I navigate to home page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='19' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I access the registration form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='20' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I fill the form  "Invalid_Register" and rownumber 1</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='21' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And validation</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='22' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then "Erreur : cette adresse e-mail est déjà utilisée. Veuillez en choisir une autre." is displayed</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='23' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Register</span>
+				<span class='category label white-text'>@Invalid_Register_Form</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">enter invalid data</span>
+			
+				<ul class='steps'>
+					<li test-id='24' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I navigate to home page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='25' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I access the registration form</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='26' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I fill the form  "Invalid_Register" and rownumber 2</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='27' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And validation</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='28' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then "Erreur : l’adresse e-mail est incorrecte." is displayed</span>
+							<div class='pre'>passed</div>
 					</li>
 				</ul>
 		</li>
@@ -357,65 +435,15 @@
 				
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@Auth</span>
+						<span class='category-name'>@Register</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
-							<span class='label fail'>3</span>
-						</span>
-					</div>
-					<div class='category-content hide'>
-						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
-							<span class='label red lighten-1 white-text'>Failed: 3</span>
-							
-						</div>
-					
-						<div class='category-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Oct 26, 2022 09:24:13 PM</td>
-										<td class='linked' test-id='1'>Authentification</td>
-										<td><span class='test-status fail'>fail</span></td>
-									</tr>
-									<tr>
-										<td>Oct 26, 2022 09:24:14 PM</td>
-										<td class='linked' test-id='3'>Authentification.check invalid authentication.check invalid authentication</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Oct 26, 2022 09:25:32 PM</td>
-										<td class='linked' test-id='8'>Authentification.check invalid authentication.check invalid authentication</td>
-										<td><span class='test-status fail'>fail</span></td>
-									</tr>
-									<tr>
-										<td>Oct 26, 2022 09:25:53 PM</td>
-										<td class='linked' test-id='13'>Authentification.check invalid authentication.check invalid authentication</td>
-										<td><span class='test-status fail'>fail</span></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-				<li class='category displayed active'>
-					<div class='category-heading'>
-						<span class='category-name'>@authentification</span>
-						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label pass'>3</span>
 							<span class='label fail'>2</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
+							<span class='label green accent-4 white-text'>Passed: 3</span>
 							<span class='label red lighten-1 white-text'>Failed: 2</span>
 							
 						</div>
@@ -431,19 +459,107 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Oct 26, 2022 09:24:14 PM</td>
-										<td class='linked' test-id='3'>Authentification.check invalid authentication.check invalid authentication</td>
+										<td>Oct 28, 2022 08:16:53 PM</td>
+										<td class='linked' test-id='1'>Register</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Oct 28, 2022 08:16:53 PM</td>
+										<td class='linked' test-id='3'>Register.enter valid data.enter valid data</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Oct 28, 2022 08:17:36 PM</td>
+										<td class='linked' test-id='11'>Register.enter invalid data.enter invalid data</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Oct 26, 2022 09:25:32 PM</td>
-										<td class='linked' test-id='8'>Authentification.check invalid authentication.check invalid authentication</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td>Oct 28, 2022 08:18:02 PM</td>
+										<td class='linked' test-id='17'>Register.enter invalid data.enter invalid data</td>
+										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Oct 26, 2022 09:25:53 PM</td>
-										<td class='linked' test-id='13'>Authentification.check invalid authentication.check invalid authentication</td>
+										<td>Oct 28, 2022 08:18:28 PM</td>
+										<td class='linked' test-id='23'>Register.enter invalid data.enter invalid data</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Valid_Register_Form</span>
+						<span class='category-status right'>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Oct 28, 2022 08:16:53 PM</td>
+										<td class='linked' test-id='3'>Register.enter valid data.enter valid data</td>
 										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Invalid_Register_Form</span>
+						<span class='category-status right'>
+							<span class='label pass'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 3</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Oct 28, 2022 08:17:36 PM</td>
+										<td class='linked' test-id='11'>Register.enter invalid data.enter invalid data</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Oct 28, 2022 08:18:02 PM</td>
+										<td class='linked' test-id='17'>Register.enter invalid data.enter invalid data</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Oct 28, 2022 08:18:28 PM</td>
+										<td class='linked' test-id='23'>Register.enter invalid data.enter invalid data</td>
+										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -489,8 +605,8 @@
 
                         <li class='exception displayed active'>
                             <div class='exception-heading'>
-                                <span class='exception-name'>org.junit.ComparisonFailure</span>
-                                <span class='exception-count right'><span class='label red lighten-1 white-text'>2</span></span>
+                                <span class='exception-name'>org.openqa.selenium.ElementNotInteractableException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
                             </div>
                             <div class='exception-content hide'>
                                 <div class='exception-tests'>
@@ -504,25 +620,39 @@
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Oct 26, 2022 09:25:52 PM</td>
-                                                        <td class='linked' test-id='12'>Authentification.check invalid authentication.check invalid authentication.Then check the "Invalid username or incorrect password!"</td>
-                                                        <td><pre><textarea>org.junit.ComparisonFailure: expected:<[Invalid username or incorrect password!]> but was:<[The password is incorrect]>
-	at org.junit.Assert.assertEquals(Assert.java:115)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at pageObject.AuthObject.checkResult(AuthObject.java:40)
-	at stepDefinition.AuthSteps.check_the(AuthSteps.java:61)
-	at ✽.Then check the "Invalid username or incorrect password!"(Authentification.feature:10)
-</textarea></pre></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Oct 26, 2022 09:26:14 PM</td>
-                                                        <td class='linked' test-id='17'>Authentification.check invalid authentication.check invalid authentication.Then check the "Invalid username or incorrect password!"</td>
-                                                        <td><pre><textarea>org.junit.ComparisonFailure: expected:<[Invalid username or incorrect password!]> but was:<[The password is incorrect]>
-	at org.junit.Assert.assertEquals(Assert.java:115)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at pageObject.AuthObject.checkResult(AuthObject.java:40)
-	at stepDefinition.AuthSteps.check_the(AuthSteps.java:61)
-	at ✽.Then check the "Invalid username or incorrect password!"(Authentification.feature:10)
+                                                        <td>Oct 28, 2022 08:17:25 PM</td>
+                                                        <td class='linked' test-id='9'>Register.enter valid data.enter valid data.And click to logout button</td>
+                                                        <td><pre><textarea>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=106.0.5249.119)
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'LAPTOP-1901DLOF', ip: '192.168.1.227', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cd739a976027cc0337e83218db441053, clickElement {id=9e53bce2-9af9-451f-83b4-4af7a159952a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\beaut\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51601}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51601/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (cd739a976027cc0337e83218db441053)] -> css selector: #login-popup-3 > div > div > a.logout]
+Session ID: cd739a976027cc0337e83218db441053
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy21.click(Unknown Source)
+	at pageObject.InscriptionObject.deconnexion(InscriptionObject.java:78)
+	at stepDefinition.InscriptionSteps.click_to_logout_button(InscriptionSteps.java:55)
+	at ✽.And click to logout button(Inscription.feature:14)
 </textarea></pre></td>
                                                     </tr>
                                         </tbody>
@@ -555,31 +685,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>3</div>
+					<div class='panel-lead'>4</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>12</div>
+					<div class='panel-lead'>21</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Oct 26, 2022 09:24:13 PM</div>
+					<div class='panel-lead'>Oct 28, 2022 08:16:53 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Oct 26, 2022 09:26:15 PM</div>
+			 		<div class='panel-lead'>Oct 28, 2022 08:18:43 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>122,017ms</div>
+					<div class='panel-lead'>109,418ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -595,21 +725,30 @@
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>@Auth</td>
-							<td>1</td>
+							<td>@Register</td>
 							<td>3</td>
-							<td>0</td>
-							<td>
-									25%
-							</td>
-						</tr>
-						<tr>
-							<td>@authentification</td>
-							<td>1</td>
 							<td>2</td>
 							<td>0</td>
 							<td>
-									33.333%
+									60%
+							</td>
+						</tr>
+						<tr>
+							<td>@Valid_Register_Form</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@Invalid_Register_Form</td>
+							<td>3</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
 							</td>
 						</tr>
 					</table>
@@ -633,23 +772,23 @@
 				skipParent: 0,
 				exceptionsParent: 1,
 				
-				passChild: 1,
-				failChild: 2,
+				passChild: 3,
+				failChild: 1,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 2,
+				exceptionsChild: 1,
 				
-				passGrandChild: 10,
-				failGrandChild: 2,
+				passGrandChild: 20,
+				failGrandChild: 1,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
 				skipGrandChild: 0,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 2,
+				exceptionsGrandChild: 1,
 			};
 		</script>
 		

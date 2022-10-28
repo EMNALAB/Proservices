@@ -20,7 +20,6 @@ public class AuthObject {
     public  AuthObject(WebDriver driver) {
         this.driver= driver;
         PageFactory.initElements(driver, this);
-
     }
     public void putData(String USER, String PWD){
         JavascriptExecutor js =((JavascriptExecutor)driver);
@@ -28,16 +27,13 @@ public class AuthObject {
         username.sendKeys(USER);
         password.sendKeys(PWD);
     }
-
     public void signIN(){
         loginbutton.click();
     }
-
     public void checkResult(String message)
     {
         String actualResult = msg.getText();
         String expectedResult = message;
         Assert.assertEquals(expectedResult,actualResult);
-
     }
 }

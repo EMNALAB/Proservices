@@ -50,10 +50,10 @@ public class InscriptionSteps {
 	public void user_space_must_be_displayed() throws Throwable {
 		inscriptionobject.chekHomPage();
 	}
-	@Then("^click to logout button$")
-	public void click_to_logout_button() throws Throwable {
-		inscriptionobject.deconnexion();
-	}
+	//@Then("^click to logout button$")
+	//public void click_to_logout_button() throws Throwable {
+	//	inscriptionobject.deconnexion();
+	//}
 	@Then("^\"([^\"]*)\" is displayed$")
 	public void is_displayed(String message) throws Throwable {
 		inscriptionobject.checkMsg(message);
